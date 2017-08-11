@@ -13,7 +13,7 @@
         statstimer,
         oncall = false,
         usermedia = new UserMedia(),
-        signalConn = $.hubConnection('/Signaling/signalr', { useDefaultPath: false }),
+        signalConn = $.hubConnection('https://ewall.syc.com.co/signalr', { useDefaultPath: false }),
         signalHub = signalConn.createHubProxy('signalHub'),
         that = this;
 
