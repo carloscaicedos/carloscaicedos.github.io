@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Demo Chat</title>
+    <meta charset="utf-8" />
+    <script src="Scripts/jquery-3.1.1.min.js"></script>
+    <script src="Scripts/jquery.signalR-2.2.2.min.js"></script>
+    <!--<script src="/signalr/hubs"></script>-->
+    <script src="Scripts/signaling.js"></script>
+    <script src="Scripts/usermedia.js"></script>
+    <script src="Scripts/demochat.js"></script>
+
+    <link href="Styles/demochat.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="panelVideo">
+        <video id="remoteVideo" poster="images/usuario.png" autoplay></video>
+        <div class="remoteControls">
+            <div id="remVideo"></div>
+            <div id="remAudio"></div>
+            <div id="recVideo"></div>
+        </div>
+        <div class="localVideo">
+            <video id="localVideo" poster="images/usuario.png" autoplay muted></video>
+            <div class="localControls">
+                <div id="locVideo"></div>
+                <div id="locAudio"></div>
+            </div>
+            <div class="eqBox">
+                <div id="soundLevel"></div>
+            </div>
+        </div>
+        <div class="info">
+            <table class="datasend">
+                <tr>
+                    <td>Vídeo:</td>
+                    <td class="rate"><span class="ratevalue" id="videorecv">0</span> Kb/s</td>
+                    <td>/</td>
+                    <td class="rate"><span class="ratevalue" id="audiorecv">0</span> Kb/s</td>
+                    <td>Audio:</td>
+                </tr>
+            </table>
+            <table class="datarecv">
+                <tr>
+                    <td>Vídeo:</td>
+                    <td class="rate"><span class="ratevalue" id="videosend">0</span> Kb/s</td>
+                    <td>/</td>
+                    <td>Audio:</td>
+                    <td class="rate"><span class="ratevalue" id="audiosend">0</span> Kb/s</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="panelContacts">
+        <div class="userInfo"><span id="username" class="disconnected">Desconectado</span> <span id="btnLogin" class="login"></span></div>
+        <div class="contactList"></div>
+        <div class="msgPanel">
+            <div id="logMessages"></div>
+        </div>
+        <textarea id="txtMessage"></textarea>
+        <div id="btnSend"></div>
+    </div>
+</body>
+</html>

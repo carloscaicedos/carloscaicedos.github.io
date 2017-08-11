@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Media</title>
+	<meta charset="utf-8" />
+    
+    <script src="Scripts/jquery-3.1.1.min.js"></script>
+    <script src="Scripts/usermedia.js"></script>
+</head>
+<body>
+    <video id="localVideo" poster="images/usuario.png" autoplay></video>
+    <br />
+    <button onclick="testMedia()">Probar</button>
+    <button onclick="closeMedia()">Desconectar</button>
+
+    <script type="text/javascript">
+        var usermedia = new UserMedia();
+
+        function testMedia() {
+
+            usermedia.connectDevices(true, true)
+                .then(function (stream) {
+                    $('#localVideo')[0].srcObject = stream;
+                })
+            .catch(function (err) {
+                console.log('Error:', err);
+                alert(err);
+            })
+        }
+
+        function closeMedia() {
+            usermedia.stop();
+            $('#localVideo')[0].srcObject = null;
+        }
+    </script>
+</body>
+</html>

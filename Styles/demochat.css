@@ -1,0 +1,354 @@
+﻿body {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+.panelVideo {
+    position: relative;
+    flex: auto;
+    border: 1px solid gray;
+    box-sizing: border-box;
+}
+
+#remoteVideo {
+    width: 99%;
+    height: 99%;
+}
+
+.remoteControls {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    background: rgba(210, 210, 210, 0.7);
+    box-shadow: 2px 2px 3px #333;
+}
+
+#remVideo {
+    display: block;
+    margin: 10px 5px;
+    width: 16px;
+    height: 16px;
+    background-image: url(../images/video_on.png);
+    background-size: contain;
+}
+
+#remAudio {
+    display: block;
+    margin: 10px 5px;
+    width: 16px;
+    height: 16px;
+    background-image: url(../images/volume_on.png);
+    background-size: contain;
+}
+
+#recVideo {
+    display: block;
+    margin: 10px 5px;
+    width: 16px;
+    height: 16px;
+    background-image: url(../images/record.png);
+    background-size: contain;
+}
+
+.localVideo {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 150px;
+    height: 150px;
+    background: rgba(21, 21, 21, 0.5);
+    box-shadow: 2px 2px 3px #333;
+}
+
+#localVideo {
+    width: 100%;
+    height: 100%;
+}
+
+.localControls {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background: rgba(210, 210, 210, 0.7);
+}
+
+#locVideo {
+    display: inline-block;
+    margin: 5px;
+    width: 16px;
+    height: 16px;
+    background-image: url(../images/video_on.png);
+    background-size: contain;
+}
+
+#locAudio {
+    display: inline-block;
+    margin: 5px;
+    width: 16px;
+    height: 16px;
+    background-image: url(../images/mic_on.png);
+    background-size: contain;
+}
+
+.panelContacts {
+    position: relative;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    max-width: 350px;
+    background: #e8f5e9;
+}
+
+.userInfo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    color: white;
+    background: #4caf50;
+    padding: 5px;
+    font-weight: bold;
+    max-height: 30px;
+    font-family: sans-serif;
+    box-shadow: 2px 2px 2px #555;
+    z-index: 1;
+}
+
+#username {
+    position: relative;
+    padding-left: 10px;
+}
+
+.disconnected {
+    font-style: italic;
+    font-weight: normal;
+}
+
+#btnLogin {
+    float: right;
+    background-image: url(../images/login.png);
+    background-size: contain;
+    width: 21px;
+    height: 21px;
+    cursor: pointer;
+}
+
+    #btnLogin.logout {
+        background-image: url(../images/logout.png);
+    }
+
+.contactList {
+    margin-top: 30px;
+    min-height: 25%;
+    max-height: 25%;
+    overflow: auto;
+    border-bottom: 1px solid #888;
+}
+
+.contact {
+    padding: 5px;
+    box-shadow: 1px 1px 1px #555;
+    margin: 3px 0;
+    background: #a5d6a7;
+    font-family: sans-serif;
+}
+
+    .contact.selected {
+        background: #26a69a;
+        color: #fff;
+        padding-left: 10px;
+    }
+
+    .contact.oncall {
+        background-color: #ce93d8;
+    }
+
+        .contact.oncall:hover {
+            background-color: #ce93d8 !important;
+        }
+
+        .contact.oncall img {
+            display: none !important;
+        }
+
+            .contact.oncall img.hangup {
+                display: inline-block !important;
+            }
+
+    .contact.selected:hover {
+        background: #26a69a;
+    }
+
+    .contact span {
+        float: right;
+    }
+
+    .contact img {
+        display: none;
+        width: 16px;
+        height: 16px;
+        padding: 0 3px;
+    }
+
+    .contact:hover {
+        background: #c8e6c9;
+    }
+
+    .contact.selected:hover img {
+        display: inline-block;
+    }
+
+    .contact.selected:hover .hangup {
+        display: none;
+    }
+
+    .contact.selected:hover img {
+        display: inline-block;
+    }
+
+.msgPanel {
+    flex: auto;
+    top: 0px;
+    bottom: 25px;
+    margin-top: 5px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+#logMessages {
+    flex: auto;
+    padding: 10px;
+    text-align: justify;
+    background: #e8f5e9;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    font-size: 0.9em;
+}
+
+#txtMessage {
+    padding: 5px;
+    bottom: 0px;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+#btnSend {
+    position: absolute;
+    bottom: 3px;
+    right: 3px;
+    width: 25px;
+    height: 25px;
+    background-image: url(../images/send.png);
+    background-size: contain;
+    box-shadow: 1px 1px 1px gray;
+}
+
+.message {
+    clear: both;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+    width: 80%;
+    height: auto;
+    font-family: sans-serif;
+    background-color: #fff;
+    box-shadow: 2px 2px 4px #777;
+    border-radius: 5px;
+}
+
+.ownmessage {
+    float: right;
+    background-color: #fff8e1;
+}
+
+    .ownmessage span {
+        float: right;
+    }
+
+    .ownmessage .datetime {
+        float: left;
+    }
+
+.sender {
+    color: #01579b;
+}
+
+.datetime {
+    font-size: 0.75em;
+    color: gray;
+    float: right;
+}
+
+.text {
+    clear: both;
+    text-align: justify;
+}
+
+.eqBox {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    border: 1px solid black;
+    width: 7px;
+    height: 100%;
+    box-sizing: border-box;
+    opacity: 0.75;
+}
+
+#soundLevel {
+    background-color: #4CAF50;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 0%;
+}
+
+@keyframes sonarWave {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.sonar {
+    animation: sonarWave 1.2s ease infinite;
+}
+
+.info {
+  background: rgba(240, 240, 240, 0.4);
+  /*border: 1px solid coral;*/
+  padding: 10px;
+  bottom: 0;
+  left:0;
+  position: absolute;
+  display: inline-block;
+  box-shadow: 2px 2px 3px gray;
+}
+
+.datasend {
+  font-family: sans-serif;
+  font-size: 0.9em;
+}
+
+.datarecv {
+  font-family: sans-serif;
+  font-size: 0.7em;
+  float: right;
+}
+
+.rate {
+  text-align: right;
+}
+
+.ratevalue{
+  font-size: 1.2em;  
+}
